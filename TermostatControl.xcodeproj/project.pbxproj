@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E1C777FD21FB5C8A004D8F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */; };
-		E1C777FF21FB5C8A004D8F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C777FE21FB5C8A004D8F5F /* ViewController.swift */; };
+		E1C777FF21FB5C8A004D8F5F /* TermostatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C777FE21FB5C8A004D8F5F /* TermostatVC.swift */; };
 		E1C7780221FB5C8A004D8F5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C7780021FB5C8A004D8F5F /* Main.storyboard */; };
 		E1C7780421FB5C8B004D8F5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C7780321FB5C8B004D8F5F /* Assets.xcassets */; };
 		E1C7780721FB5C8B004D8F5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C7780521FB5C8B004D8F5F /* LaunchScreen.storyboard */; };
+		E1C7780F21FB5F1F004D8F5F /* UIViewXIBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7780E21FB5F1F004D8F5F /* UIViewXIBExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E1C777F921FB5C8A004D8F5F /* TermostatControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermostatControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1C777FE21FB5C8A004D8F5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1C777FE21FB5C8A004D8F5F /* TermostatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermostatVC.swift; sourceTree = "<group>"; };
 		E1C7780121FB5C8A004D8F5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1C7780321FB5C8B004D8F5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C7780621FB5C8B004D8F5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1C7780821FB5C8B004D8F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C7780E21FB5F1F004D8F5F /* UIViewXIBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewXIBExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,30 @@
 			isa = PBXGroup;
 			children = (
 				E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */,
-				E1C777FE21FB5C8A004D8F5F /* ViewController.swift */,
+				E1C7781121FB5FF2004D8F5F /* Controllers */,
+				E1C7781021FB5F98004D8F5F /* ViewExtensions */,
 				E1C7780021FB5C8A004D8F5F /* Main.storyboard */,
 				E1C7780321FB5C8B004D8F5F /* Assets.xcassets */,
 				E1C7780521FB5C8B004D8F5F /* LaunchScreen.storyboard */,
 				E1C7780821FB5C8B004D8F5F /* Info.plist */,
 			);
 			path = TermostatControl;
+			sourceTree = "<group>";
+		};
+		E1C7781021FB5F98004D8F5F /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1C7780E21FB5F1F004D8F5F /* UIViewXIBExtension.swift */,
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		E1C7781121FB5FF2004D8F5F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1C777FE21FB5C8A004D8F5F /* TermostatVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C777FF21FB5C8A004D8F5F /* ViewController.swift in Sources */,
+				E1C777FF21FB5C8A004D8F5F /* TermostatVC.swift in Sources */,
 				E1C777FD21FB5C8A004D8F5F /* AppDelegate.swift in Sources */,
+				E1C7780F21FB5F1F004D8F5F /* UIViewXIBExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
