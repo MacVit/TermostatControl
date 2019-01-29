@@ -10,11 +10,14 @@ import UIKit
 
 class TermostatVC: UIViewController {
 
+    @IBOutlet weak private var buttonsViewCollection: WeatherControlView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        buttonsViewCollection.selectedButtonHanlder = { (selectedIndex) in
+//            print("Did select at \(selectedIndex)")
+//        }
     }
-
-
 }
 
