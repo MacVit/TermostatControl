@@ -15,9 +15,10 @@ class TermostatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        buttonsViewCollection.selectedButtonHanlder = { (selectedIndex) in
-//            print("Did select at \(selectedIndex)")
-//        }
+        buttonsViewCollection.selectedButtonHanlder = { (selectedIndex) in
+            
+            print("Did select at \(selectedIndex)")
+        }
     }
 }
 

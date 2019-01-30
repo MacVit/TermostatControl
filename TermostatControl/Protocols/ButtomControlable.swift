@@ -10,7 +10,9 @@ import UIKit
 
 protocol ButtomControlable {
     
-    var selectedButtonHanlder: ((Int) -> Void)? { get set }
+    typealias SeletedIndex = ((Int) -> Void)?
+    
+    var selectedButtonHanlder: SeletedIndex { get set }
     
     var setImageDescription: UIImage? { get set }
     

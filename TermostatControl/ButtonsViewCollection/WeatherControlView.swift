@@ -41,6 +41,11 @@ class WeatherControlView: UIView, ButtomControlable {
                 }, completion: nil)
             }
         }
+        
+        if let index = controlStackView.arrangedSubviews.index(of: sender) {
+            print("Selected index is \(index)")
+            selectedButtonHanlder?(index)
+        }
     }
     
     // MARK: - Inits
@@ -76,13 +81,7 @@ class WeatherControlView: UIView, ButtomControlable {
     
     // MARK: - Protocol Implementation
     
-    var selectedButtonHanlder: ((Int) -> Void)? {
-        didSet {
-            
-            
-            
-        }
-    }
+    var selectedButtonHanlder: SeletedIndex
     
     var setImageDescription: UIImage? {
         didSet {
@@ -149,5 +148,7 @@ class WeatherControlView: UIView, ButtomControlable {
             
             controlStackView.addArrangedSubview(btnNew)
         }
+        
+        selectedButtonHanlder?(0)
     }
 }
