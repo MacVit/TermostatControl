@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12E53FB2201DFEA006B2E5A /* CustomSliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E53FA2201DFEA006B2E5A /* CustomSliderControl.swift */; };
 		E1C777FD21FB5C8A004D8F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */; };
 		E1C777FF21FB5C8A004D8F5F /* TermostatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C777FE21FB5C8A004D8F5F /* TermostatVC.swift */; };
 		E1C7780221FB5C8A004D8F5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C7780021FB5C8A004D8F5F /* Main.storyboard */; };
@@ -17,9 +18,12 @@
 		E1C7781621FB68D0004D8F5F /* WeatherControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7781521FB68D0004D8F5F /* WeatherControlView.swift */; };
 		E1C7781921FB693D004D8F5F /* WeatherControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C7781821FB693D004D8F5F /* WeatherControlView.xib */; };
 		E1C7781C21FF00CA004D8F5F /* ButtomControlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7781B21FF00CA004D8F5F /* ButtomControlable.swift */; };
+		E1C7781F22018FE7004D8F5F /* PowerSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7781E22018FE7004D8F5F /* PowerSlideView.swift */; };
+		E1C7782122019001004D8F5F /* PowerSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C7782022019001004D8F5F /* PowerSlideView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E12E53FA2201DFEA006B2E5A /* CustomSliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderControl.swift; sourceTree = "<group>"; };
 		E1C777F921FB5C8A004D8F5F /* TermostatControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermostatControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C777FE21FB5C8A004D8F5F /* TermostatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermostatVC.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		E1C7781521FB68D0004D8F5F /* WeatherControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherControlView.swift; sourceTree = "<group>"; };
 		E1C7781821FB693D004D8F5F /* WeatherControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherControlView.xib; sourceTree = "<group>"; };
 		E1C7781B21FF00CA004D8F5F /* ButtomControlable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomControlable.swift; sourceTree = "<group>"; };
+		E1C7781E22018FE7004D8F5F /* PowerSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerSlideView.swift; sourceTree = "<group>"; };
+		E1C7782022019001004D8F5F /* PowerSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerSlideView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E12E53F92201DF84006B2E5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1C7781421FB6856004D8F5F /* ButtonCustomControl */,
+				E12E53FC2201E001006B2E5A /* CustomSliderControl */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E12E53FC2201E001006B2E5A /* CustomSliderControl */ = {
+			isa = PBXGroup;
+			children = (
+				E12E53FA2201DFEA006B2E5A /* CustomSliderControl.swift */,
+			);
+			name = CustomSliderControl;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		E1C777F021FB5C8A004D8F5F = {
 			isa = PBXGroup;
 			children = (
@@ -66,13 +90,14 @@
 			children = (
 				E1C777FC21FB5C8A004D8F5F /* AppDelegate.swift */,
 				E1C7781D21FF0113004D8F5F /* Protocols */,
-				E1C7781421FB6856004D8F5F /* ButtonCustomControl */,
+				E12E53F92201DF84006B2E5A /* Views */,
 				E1C7781121FB5FF2004D8F5F /* Controllers */,
 				E1C7781021FB5F98004D8F5F /* ViewExtensions */,
 				E1C7781A21FCB9B7004D8F5F /* User Interface */,
 				E1C7781721FB6909004D8F5F /* ButtonsViewCollection */,
-				E1C7780521FB5C8B004D8F5F /* LaunchScreen.storyboard */,
+				E1C778222201900D004D8F5F /* PowerSlideView */,
 				E1C7780321FB5C8B004D8F5F /* Assets.xcassets */,
+				E1C7780521FB5C8B004D8F5F /* LaunchScreen.storyboard */,
 				E1C7780821FB5C8B004D8F5F /* Info.plist */,
 			);
 			path = TermostatControl;
@@ -125,6 +150,15 @@
 				E1C7781B21FF00CA004D8F5F /* ButtomControlable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1C778222201900D004D8F5F /* PowerSlideView */ = {
+			isa = PBXGroup;
+			children = (
+				E1C7781E22018FE7004D8F5F /* PowerSlideView.swift */,
+				E1C7782022019001004D8F5F /* PowerSlideView.xib */,
+			);
+			path = PowerSlideView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C7782122019001004D8F5F /* PowerSlideView.xib in Resources */,
 				E1C7781921FB693D004D8F5F /* WeatherControlView.xib in Resources */,
 				E1C7780721FB5C8B004D8F5F /* LaunchScreen.storyboard in Resources */,
 				E1C7780421FB5C8B004D8F5F /* Assets.xcassets in Resources */,
@@ -202,7 +237,9 @@
 				E1C7781321FB6820004D8F5F /* ButtonCustomControl.swift in Sources */,
 				E1C777FF21FB5C8A004D8F5F /* TermostatVC.swift in Sources */,
 				E1C777FD21FB5C8A004D8F5F /* AppDelegate.swift in Sources */,
+				E12E53FB2201DFEA006B2E5A /* CustomSliderControl.swift in Sources */,
 				E1C7781621FB68D0004D8F5F /* WeatherControlView.swift in Sources */,
+				E1C7781F22018FE7004D8F5F /* PowerSlideView.swift in Sources */,
 				E1C7781C21FF00CA004D8F5F /* ButtomControlable.swift in Sources */,
 				E1C7780F21FB5F1F004D8F5F /* UIViewXIBExtension.swift in Sources */,
 			);
@@ -360,7 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devcreatios..TermostatControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devcreatios..TermostatControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PowerSlideView" customModule="TermostatControl" customModuleProvider="target">
+            <connections>
+                <outlet property="sliderConrol" destination="6UQ-UC-Gg0" id="mNs-hf-5zB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-hc-660">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="128"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-D7-fGG">
+                            <rect key="frame" x="0.0" y="16" width="315" height="96"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1gh-8c-L5x">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                    <subviews>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" minimumValueImage="fan_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6UQ-UC-Gg0" customClass="CustomSliderControl" customModule="TermostatControl" customModuleProvider="target">
+                                            <rect key="frame" x="-2" y="0.0" width="319" height="31"/>
+                                            <color key="minimumTrackTintColor" red="0.84475320580000002" green="0.2249136269" blue="0.36078006029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="maximumTrackTintColor" red="0.31375634670000002" green="0.31364542249999999" blue="0.31764781479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="slidePowerAction:" destination="-1" eventType="valueChanged" id="H0O-Bw-K8S"/>
+                                            </connections>
+                                        </slider>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ERR-X0-f9Q">
+                                    <rect key="frame" x="0.0" y="60" width="315" height="36"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-Sg-UKC">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="Q5G-ye-wSO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="-10" maxY="0.0"/>
+                                            <state key="normal" title="Hold to turn off" image="power_icon_Active">
+                                                <color key="titleColor" red="0.31375634670257568" green="0.31364542245864868" blue="0.31764781475067139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="togglePowerAction:" destination="-1" eventType="touchUpInside" id="D6f-xw-0MR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1098335609" green="0.105726786" blue="0.1137265638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="iP2-D7-fGG" firstAttribute="width" secondItem="9iq-hc-660" secondAttribute="width" id="8jw-gu-Hoa"/>
+                        <constraint firstItem="iP2-D7-fGG" firstAttribute="centerX" secondItem="9iq-hc-660" secondAttribute="centerX" id="bcU-sI-Vzy"/>
+                        <constraint firstItem="iP2-D7-fGG" firstAttribute="centerY" secondItem="9iq-hc-660" secondAttribute="centerY" id="zHw-AI-fCT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9iq-hc-660" secondAttribute="trailing" id="LGN-O2-Nls"/>
+                <constraint firstItem="9iq-hc-660" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Lac-Vn-HIE"/>
+                <constraint firstItem="9iq-hc-660" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Nz9-9X-Fg7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9iq-hc-660" secondAttribute="bottom" id="RTa-GX-203"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="151.19999999999999" y="-171.81409295352324"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fan_icon" width="20" height="20"/>
+        <image name="power_icon_Active" width="40" height="40"/>
+    </resources>
+</document>

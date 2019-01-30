@@ -148,7 +148,5 @@ class WeatherControlView: UIView, ButtomControlable {
             
             controlStackView.addArrangedSubview(btnNew)
         }
-        
-        selectedButtonHanlder?(0)
     }
 }

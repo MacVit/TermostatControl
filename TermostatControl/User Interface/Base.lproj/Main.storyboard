@@ -18,24 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbN-bC-ov2" customClass="WeatherControlView" customModule="TermostatControl" customModuleProvider="target">
-                                <rect key="frame" x="20" y="508" width="240" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s3w-cW-oRZ">
+                                <rect key="frame" x="16" y="505" width="343" height="273"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbN-bC-ov2" customClass="WeatherControlView" customModule="TermostatControl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="120" id="im9-Gr-QCD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EL9-9W-hPf" customClass="PowerSlideView" customModule="TermostatControl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="145" width="343" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="W85-NW-Hm1"/>
+                                            <constraint firstAttribute="width" constant="343" id="tBD-1O-hyj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7Gq-XE-7uS"/>
+                                    <constraint firstAttribute="width" constant="343" id="4cm-oL-vh3"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1098335609" green="0.105726786" blue="0.1137265638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="KbN-bC-ov2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0u3-yh-faN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbN-bC-ov2" secondAttribute="trailing" constant="115" id="n97-Md-tGN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KbN-bC-ov2" secondAttribute="bottom" constant="150" id="tY2-Z4-WMj"/>
+                            <constraint firstItem="s3w-cW-oRZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D1l-D6-j7P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s3w-cW-oRZ" secondAttribute="trailing" constant="16" id="GkV-CS-hcb"/>
+                            <constraint firstItem="s3w-cW-oRZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ruG-sP-ogq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonsViewCollection" destination="KbN-bC-ov2" id="udq-OO-crW"/>
+                        <outlet property="powerSliderView" destination="EL9-9W-hPf" id="oSG-2Q-H1U"/>
+                        <outlet property="powerSliderViewHeight" destination="W85-NW-Hm1" id="AtB-7j-NCn"/>
+                        <outlet property="weatherControlView" destination="KbN-bC-ov2" id="udq-OO-crW"/>
+                        <outlet property="weatherControlViewHeight" destination="im9-Gr-QCD" id="TZv-KG-Zfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
