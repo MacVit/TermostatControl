@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemperatureView" customModule="TermostatControl" customModuleProvider="target">
+            <connections>
+                <outlet property="lbTemperature" destination="9j2-AS-OZE" id="vdP-N6-vuB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="193" height="185"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-zZ-uBM">
+                    <rect key="frame" x="0.0" y="0.0" width="193" height="185"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="yC6-c7-OgS">
+                            <rect key="frame" x="0.0" y="0.0" width="193" height="185"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPERATURE, ℃" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYD-sy-Zhi">
+                                    <rect key="frame" x="0.0" y="0.0" width="152.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j2-AS-OZE">
+                                    <rect key="frame" x="0.0" y="19" width="193" height="166"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="149"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1098335609" green="0.105726786" blue="0.1137265638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="yC6-c7-OgS" firstAttribute="top" secondItem="ReZ-zZ-uBM" secondAttribute="top" id="J03-EC-aDd"/>
+                        <constraint firstAttribute="trailing" secondItem="yC6-c7-OgS" secondAttribute="trailing" id="XFL-eP-4xY"/>
+                        <constraint firstAttribute="bottom" secondItem="yC6-c7-OgS" secondAttribute="bottom" id="e5s-cj-tdf"/>
+                        <constraint firstItem="yC6-c7-OgS" firstAttribute="leading" secondItem="ReZ-zZ-uBM" secondAttribute="leading" id="h0s-a7-AY4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ReZ-zZ-uBM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VA0-dp-upT"/>
+                <constraint firstItem="ReZ-zZ-uBM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZXh-iW-iHV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ReZ-zZ-uBM" secondAttribute="bottom" id="bec-Gh-dFl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ReZ-zZ-uBM" secondAttribute="trailing" id="ezs-2r-CMM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-0.44977511244377816"/>
+        </view>
+    </objects>
+</document>
