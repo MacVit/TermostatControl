@@ -52,7 +52,7 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-8G-7yC">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-8G-7yC">
                                     <rect key="frame" x="0.0" y="60" width="240" height="60"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-fw-y7a" customClass="ButtonCustomControl" customModule="TermostatControl" customModuleProvider="target">
@@ -90,7 +90,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" priority="250" constant="60" id="1Rh-xu-IbJ"/>
+                                        <constraint firstAttribute="height" priority="750" constant="60" id="1Rh-xu-IbJ"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
@@ -120,8 +120,8 @@
     </objects>
     <resources>
         <image name="clock_icon" width="100" height="100"/>
-        <image name="snow_icon_Active" width="180" height="180"/>
-        <image name="sun_icon_Active" width="180" height="180"/>
-        <image name="water_icon_Active" width="177.23077392578125" height="177.23077392578125"/>
+        <image name="snow_icon_Active" width="40" height="40"/>
+        <image name="sun_icon_Active" width="40" height="40"/>
+        <image name="water_icon_Active" width="40" height="40"/>
     </resources>
 </document>
