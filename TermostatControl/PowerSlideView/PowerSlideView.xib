@@ -7,11 +7,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PowerSlideView" customModule="TermostatControl" customModuleProvider="target">
             <connections>
+                <outlet property="imFanView" destination="Dzp-at-Pb1" id="UGo-86-fzh"/>
                 <outlet property="sliderConrol" destination="6UQ-UC-Gg0" id="mNs-hf-5zB"/>
             </connections>
         </placeholder>
@@ -23,14 +25,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-hc-660">
                     <rect key="frame" x="0.0" y="0.0" width="315" height="128"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-D7-fGG">
-                            <rect key="frame" x="0.0" y="16" width="315" height="96"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-D7-fGG">
+                            <rect key="frame" x="0.0" y="19" width="315" height="90"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1gh-8c-L5x">
-                                    <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1gh-8c-L5x">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
                                     <subviews>
-                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" minimumValueImage="fan_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6UQ-UC-Gg0" customClass="CustomSliderControl" customModule="TermostatControl" customModuleProvider="target">
-                                            <rect key="frame" x="-2" y="0.0" width="319" height="31"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fan_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Dzp-at-Pb1">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="OvG-9h-hub"/>
+                                                <constraint firstAttribute="width" constant="20" id="Wox-HK-sGN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6UQ-UC-Gg0" customClass="CustomSliderControl" customModule="TermostatControl" customModuleProvider="target">
+                                            <rect key="frame" x="26" y="0.0" width="291" height="21"/>
                                             <color key="minimumTrackTintColor" red="0.84475320580000002" green="0.2249136269" blue="0.36078006029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="maximumTrackTintColor" red="0.31375634670000002" green="0.31364542249999999" blue="0.31764781479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
@@ -39,14 +48,11 @@
                                         </slider>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ERR-X0-f9Q">
-                                    <rect key="frame" x="0.0" y="60" width="315" height="36"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bBh-oI-FQU">
+                                    <rect key="frame" x="0.0" y="50" width="315" height="40"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-Sg-UKC">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="36" id="Q5G-ye-wSO"/>
-                                            </constraints>
+                                            <rect key="frame" x="78" y="0.0" width="159" height="40"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                             <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="-10" maxY="0.0"/>
                                             <state key="normal" title="Hold to turn off" image="power_icon_Active">

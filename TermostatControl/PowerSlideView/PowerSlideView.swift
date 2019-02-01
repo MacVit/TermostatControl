@@ -10,7 +10,10 @@ import UIKit
 
 class PowerSlideView: UIView {
 
+    // MARK: - Properties
+    
     // MARK: - Outlets
+    @IBOutlet weak var imFanView: UIImageView!
     
     @IBOutlet weak var sliderConrol: CustomSliderControl!
     
@@ -19,7 +22,7 @@ class PowerSlideView: UIView {
     @IBAction func togglePowerAction(_ sender: UIButton) {
         
     }
-    @IBAction func slidePowerAction(_ sender: Any) {
+    @IBAction func slidePowerAction(_ sender: CustomSliderControl) {
         
     }
     
@@ -41,6 +44,18 @@ class PowerSlideView: UIView {
     
     private func setUp() {
         addSelfNibUsingConstraints()
+        
+//        let minimumImage = sliderConrol.minimumValueImage
+//        let minimumImageview = UIImageView(image: minimumImage)
+        
+        sliderConrol.addTarget(self, action: #selector(sliderChanged(_:)), for: .valueChanged)
+    }
+    
+    @objc func sliderChanged(_ sender: CustomSliderControl) {
+        
+        self.imFanView.transform = CGAffineTransform(rotationAngle: CGFloat(sender.value * Float(Double.pi * 5)))
+        print(sender.value)
+        
     }
 
 }
