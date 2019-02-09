@@ -48,13 +48,21 @@
                                     <constraint firstAttribute="height" constant="185" id="jtF-1e-xhF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xi-Gi-16G" customClass="ArcView" customModule="TermostatControl" customModuleProvider="target">
+                                <rect key="frame" x="256" y="86" width="119" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1098335609" green="0.105726786" blue="0.1137265638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6xi-Gi-16G" secondAttribute="bottom" constant="153" id="Dx1-on-hSE"/>
+                            <constraint firstItem="6xi-Gi-16G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ecx-T0-isj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s3w-cW-oRZ" secondAttribute="trailing" constant="16" id="JhU-tT-Tzw"/>
                             <constraint firstItem="s3w-cW-oRZ" firstAttribute="top" secondItem="WCx-zi-sS7" secondAttribute="bottom" constant="60" id="Sgh-SR-z7Q"/>
                             <constraint firstItem="WCx-zi-sS7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TA1-ys-uTV"/>
+                            <constraint firstItem="6xi-Gi-16G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="aij-5W-Foz"/>
                             <constraint firstItem="s3w-cW-oRZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="p0b-Fw-05b"/>
+                            <constraint firstItem="6xi-Gi-16G" firstAttribute="leading" secondItem="WCx-zi-sS7" secondAttribute="trailing" constant="47" id="rZY-xL-4JJ"/>
                             <constraint firstItem="s3w-cW-oRZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ruG-sP-ogq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

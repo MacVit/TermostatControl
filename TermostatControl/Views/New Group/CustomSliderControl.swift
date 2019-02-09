@@ -14,15 +14,9 @@ class CustomSliderControl: UISlider {
     
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         var newRect = bounds
-        print("before rect origin Y ---\(newRect.origin.y)")
+        
         newRect.size.height = 10
         newRect.origin.y = (self.frame.height - newRect.height) / 2
-//        newRect.size.height = self.bounds.size.height / 2
-        print("after rect origin Y ---\(newRect.origin.y)")
-        
-        print("Newrect height ---\(newRect.height)")
-        
-        print("self.frame.height ---\(self.frame.height)")
         
         return newRect
     }

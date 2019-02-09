@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E115B063220C7BBD00E90085 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E115B062220C7BBD00E90085 /* ArcView.swift */; };
+		E115B066220D7DDB00E90085 /* CGFloat Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E115B065220D7DDB00E90085 /* CGFloat Extension.swift */; };
 		E12E53FB2201DFEA006B2E5A /* CustomSliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E53FA2201DFEA006B2E5A /* CustomSliderControl.swift */; };
 		E1A2838C2203015600F2801A /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2838B2203015600F2801A /* TemperatureView.swift */; };
 		E1A2838E2203017400F2801A /* TemperatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A2838D2203017400F2801A /* TemperatureView.xib */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E115B062220C7BBD00E90085 /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
+		E115B065220D7DDB00E90085 /* CGFloat Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat Extension.swift"; sourceTree = "<group>"; };
 		E12E53FA2201DFEA006B2E5A /* CustomSliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderControl.swift; sourceTree = "<group>"; };
 		E1A2838B2203015600F2801A /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		E1A2838D2203017400F2801A /* TemperatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureView.xib; sourceTree = "<group>"; };
@@ -55,11 +59,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E115B064220C7C1100E90085 /* ArcView */ = {
+			isa = PBXGroup;
+			children = (
+				E115B062220C7BBD00E90085 /* ArcView.swift */,
+			);
+			path = ArcView;
+			sourceTree = "<group>";
+		};
+		E115B067220D7DE100E90085 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E115B065220D7DDB00E90085 /* CGFloat Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E12E53F92201DF84006B2E5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E1C7781421FB6856004D8F5F /* ButtonCustomControl */,
 				E12E53FC2201E001006B2E5A /* CustomSliderControl */,
+				E115B064220C7C1100E90085 /* ArcView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +134,7 @@
 				E1C7780321FB5C8B004D8F5F /* Assets.xcassets */,
 				E1C7780521FB5C8B004D8F5F /* LaunchScreen.storyboard */,
 				E1C7780821FB5C8B004D8F5F /* Info.plist */,
+				E115B067220D7DE100E90085 /* Extensions */,
 			);
 			path = TermostatControl;
 			sourceTree = "<group>";
@@ -250,10 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C7781321FB6820004D8F5F /* ButtonCustomControl.swift in Sources */,
+				E115B063220C7BBD00E90085 /* ArcView.swift in Sources */,
 				E1C777FF21FB5C8A004D8F5F /* TermostatVC.swift in Sources */,
 				E1C777FD21FB5C8A004D8F5F /* AppDelegate.swift in Sources */,
 				E12E53FB2201DFEA006B2E5A /* CustomSliderControl.swift in Sources */,
 				E1C7781621FB68D0004D8F5F /* WeatherControlView.swift in Sources */,
+				E115B066220D7DDB00E90085 /* CGFloat Extension.swift in Sources */,
 				E1C7781F22018FE7004D8F5F /* PowerSlideView.swift in Sources */,
 				E1C7781C21FF00CA004D8F5F /* ButtomControlable.swift in Sources */,
 				E1C7780F21FB5F1F004D8F5F /* UIViewXIBExtension.swift in Sources */,
