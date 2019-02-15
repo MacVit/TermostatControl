@@ -24,5 +24,9 @@ class TermostatVC: UIViewController {
             print("Did select at \(selectedIndex)")
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
