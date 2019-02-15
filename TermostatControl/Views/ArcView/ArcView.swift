@@ -12,6 +12,9 @@ class ArcView: UIView {
 
     // MARK: - Properties
     
+    fileprivate var lastRotation: CGFloat = UserDefaults.standard.rotation
+    fileprivate var startRotationAngle: CGFloat = 0
+    
     var bezPath = UIBezierPath()
     let shapeLayer = CAShapeLayer()
     let circleLayer = CAShapeLayer()
@@ -32,10 +35,34 @@ class ArcView: UIView {
     
     // MARK: - Methods
     
+    fileprivate let rotateAnimation = CABasicAnimation()
+    
+     private func rotate(to: CGFloat, duration: Double = 0) {
+        rotateAnimation.fromValue = to
+        rotateAnimation.toValue = to
+        rotateAnimation.duration = duration
+        rotateAnimation.repeatCount = 0
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        self.layer.add(rotateAnimation, forKey: "transform.rotation.z")
+    }
+    
+    private func angle(from location: CGPoint) -> CGFloat {
+        
+        let deltaY = location.y - self.center.y
+        let deltaX = location.x - self.center.x
+        let angle = atan2(deltaY, deltaX) * 180 / .pi
+        
+        print(angle)
+        
+        return angle < 0 ? abs(angle) : 360 - angle
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        bezPath = UIBezierPath(arcCenter: CGPoint(x: self.frame.width * 2.5, y: self.frame.height / 2), radius: self.frame.width * 2.5, startAngle: self.frame.origin.x, endAngle: self.frame.origin.y, clockwise: false)
+        bezPath = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.width / 1.8, startAngle: self.frame.origin.x, endAngle: self.frame.origin.y, clockwise: false)
         
         shapeLayer.path = bezPath.cgPath
         shapeLayer.fillColor = #colorLiteral(red: 0.1107232496, green: 0.105561696, blue: 0.11438898, alpha: 1)
@@ -44,8 +71,8 @@ class ArcView: UIView {
         
         self.layer.insertSublayer(shapeLayer, at: 0)
         
-        circleLayer.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.width * 2.5, y: self.frame.height / 2), radius: self.frame.width * 2.3, startAngle: self.frame.origin.x, endAngle: self.frame.origin.y, clockwise: false).cgPath
-        circleLayer.lineWidth = 20
+        circleLayer.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2, y: self.frame.height / 2), radius: self.frame.width / 1.9, startAngle: self.frame.origin.x, endAngle: self.frame.origin.y, clockwise: false).cgPath
+        circleLayer.lineWidth = 15
         circleLayer.fillColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         circleLayer.strokeColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         circleLayer.fillColor = #colorLiteral(red: 0.3137470484, green: 0.3136649132, blue: 0.3179933429, alpha: 0.6039437072)
@@ -53,59 +80,42 @@ class ArcView: UIView {
         circleLayer.lineJoin = .round
         circleLayer.lineDashPattern = [1, 800]
         self.layer.addSublayer(circleLayer)
-        
-//        self.layer.borderWidth = 1.0
-//        self.layer.borderColor = UIColor.blue.cgColor
     }
     
     // MARK: - Gesture method
     
-    @objc private func didRotate() {
+    @objc private func handleThePans(_ gestureRecognizer: UIPanGestureRecognizer) {
         
-        let type = UIRotationGestureRecognizer()
+        let location = gestureRecognizer.location(in: self)
+        let gestureRotation = CGFloat(angle(from: location)) - startRotationAngle
         
-        self.superview?.bringSubviewToFront(self)
-        let rotation = type.rotation
-        
-        self.transform = CGAffineTransform.init(rotationAngle: rotation)
-        
-        type.rotation = 0.0
+        switch gestureRecognizer.state {
+        case .began:
+            // set the start angle of rotation
+            startRotationAngle = angle(from: location)
+        case .changed:
+            rotate(to: lastRotation - gestureRotation.degreesToRadians)
+        case .ended:
+            
+            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.preferredFramesPerSecond60, .curveLinear], animations: {
+            
+                // update the amount of rotation
+                self.lastRotation -= gestureRotation.degreesToRadians
+                
+            }, completion: nil)
+            
+        default :
+            break
+        }
+        // save the final position of the rotation to defaults
+        UserDefaults.standard.rotation = lastRotation
     }
     
-    @objc private func handleSwipes()  {
-        print("Trigering swipe gestures")
-        
-//        UIView.transition(with: self, duration: 3, options: [], animations: {
-//            self.transform = CGAffineTransform.init(rotationAngle: self.frame.width)
-//        }, completion: nil)
-        
-    }
-    
-    @objc private func handleThePans() {
-        print("pan is working")
-    }
-    
-    private func setUpSwipeGestures() -> [UISwipeGestureRecognizer] {
-        
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes))
-        
-        swipeUp.direction = .up
-        swipeDown.direction = .down
-        
-        self.addGestureRecognizer(swipeUp)
-        self.addGestureRecognizer(swipeDown)
-        
-        return [swipeUp, swipeDown]
-    }
-    
-    private func setUpPanGestures(swipeGestures: [UISwipeGestureRecognizer]) {
+    private func setUpPanGestures() {
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleThePans))
-        
-        for swipeGesture in swipeGestures {
-            panGesture.require(toFail: swipeGesture)
-        }
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
         
         self.addGestureRecognizer(panGesture)
     }
@@ -114,16 +124,9 @@ class ArcView: UIView {
     
     private func setUp() {
         
-        self.backgroundColor = #colorLiteral(red: 0.1107232496, green: 0.105561696, blue: 0.11438898, alpha: 1)
+        self.backgroundColor = UIColor.clear
         self.isUserInteractionEnabled = true
-
-        let swipeGestures = setUpSwipeGestures()
-        setUpPanGestures(swipeGestures: swipeGestures)
         
-//        let panGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didRotate))
-//        self.addGestureRecognizer(panGestureRecognizer)
-        
-        
+        setUpPanGestures()
     }
-    
 }
