@@ -12,12 +12,13 @@ class ArcView: UIView {
 
     // MARK: - Properties
     
-    fileprivate var lastRotation: CGFloat = UserDefaults.standard.rotation
-    fileprivate var startRotationAngle: CGFloat = 0
+    var lastRotation: CGFloat = UserDefaults.standard.rotation
     
     var bezPath = UIBezierPath()
     let shapeLayer = CAShapeLayer()
     let circleLayer = CAShapeLayer()
+    
+    var changeAngleHanlder: ((CGFloat) -> Void)?
     
     // MARK: - Inits
     
@@ -43,20 +44,22 @@ class ArcView: UIView {
         rotateAnimation.duration = duration
         rotateAnimation.repeatCount = 0
         rotateAnimation.isRemovedOnCompletion = false
-        rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
-        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        rotateAnimation.fillMode = .both
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         self.layer.add(rotateAnimation, forKey: "transform.rotation.z")
+        
+        changeAngleHanlder?(to)
     }
     
-    private func angle(from location: CGPoint) -> CGFloat {
+    func angle(from location: CGPoint) -> CGFloat {
         
         let deltaY = location.y - self.center.y
         let deltaX = location.x - self.center.x
         let angle = atan2(deltaY, deltaX) * 180 / .pi
         
-        print(angle)
+//        print(angle)
         
-        return angle < 0 ? abs(angle) : 360 - angle
+        return (angle < 0 ? abs(angle) : 360 - angle)
     }
     
     override func layoutSubviews() {
@@ -78,7 +81,7 @@ class ArcView: UIView {
         circleLayer.fillColor = #colorLiteral(red: 0.3137470484, green: 0.3136649132, blue: 0.3179933429, alpha: 0.6039437072)
 //        circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineJoin = .round
-        circleLayer.lineDashPattern = [1, 800]
+        circleLayer.lineDashPattern = [1, 600]
         self.layer.addSublayer(circleLayer)
     }
     
@@ -86,29 +89,29 @@ class ArcView: UIView {
     
     @objc private func handleThePans(_ gestureRecognizer: UIPanGestureRecognizer) {
         
-        let location = gestureRecognizer.location(in: self)
-        let gestureRotation = CGFloat(angle(from: location)) - startRotationAngle
+        let speedRotation: CGFloat = 2.5
+        let location = gestureRecognizer.translation(in: self)
+        let gestureRotation = CGFloat(angle(from: location) * speedRotation)
         
         switch gestureRecognizer.state {
         case .began:
-            // set the start angle of rotation
-            startRotationAngle = angle(from: location)
+            
+            lastRotation = -gestureRotation
         case .changed:
-            rotate(to: lastRotation - gestureRotation.degreesToRadians)
+//            let rotationAngle = lastRotation
+            rotate(to: lastRotation + gestureRotation.degreesToRadians)
+            
         case .ended:
             
-            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.preferredFramesPerSecond60, .curveLinear], animations: {
-            
-                // update the amount of rotation
-                self.lastRotation -= gestureRotation.degreesToRadians
-                
-            }, completion: nil)
-            
+            // update the amount of rotation
+            self.lastRotation = gestureRotation.degreesToRadians + lastRotation // - self.startRotationAngle
+
+            self.rotate(to: self.lastRotation)
         default :
             break
         }
         // save the final position of the rotation to defaults
-        UserDefaults.standard.rotation = lastRotation
+        UserDefaults.standard.rotation = lastRotation + 5
     }
     
     private func setUpPanGestures() {
@@ -125,8 +128,16 @@ class ArcView: UIView {
     private func setUp() {
         
         self.backgroundColor = UIColor.clear
-        self.isUserInteractionEnabled = true
+//        self.isUserInteractionEnabled = true
+        
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.5, options: [.preferredFramesPerSecond60, .curveEaseInOut], animations: {
+            
+            self.center.x -= self.frame.width
+            self.transform = CGAffineTransform(rotationAngle: .pi)
+            
+        }, completion: nil)
         
         setUpPanGestures()
+        
     }
 }

@@ -26,6 +26,7 @@
 		E1EDBBE32216BD00000A43E8 /* RotatableWheelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBBE22216BD00000A43E8 /* RotatableWheelDelegate.swift */; };
 		E1EDBBE72216C6B5000A43E8 /* FloatingPoint Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBBE62216C6B5000A43E8 /* FloatingPoint Extension.swift */; };
 		E1EDBBE92216C70E000A43E8 /* UserDefaults Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBBE82216C70E000A43E8 /* UserDefaults Extension.swift */; };
+		E1FC3C9D2227E81000004EB4 /* CGPoint Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC3C9C2227E81000004EB4 /* CGPoint Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E1EDBBE22216BD00000A43E8 /* RotatableWheelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatableWheelDelegate.swift; sourceTree = "<group>"; };
 		E1EDBBE62216C6B5000A43E8 /* FloatingPoint Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint Extension.swift"; sourceTree = "<group>"; };
 		E1EDBBE82216C70E000A43E8 /* UserDefaults Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults Extension.swift"; sourceTree = "<group>"; };
+		E1FC3C9C2227E81000004EB4 /* CGPoint Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				E1EDBBE62216C6B5000A43E8 /* FloatingPoint Extension.swift */,
 				E1EDBBE82216C70E000A43E8 /* UserDefaults Extension.swift */,
+				E1FC3C9C2227E81000004EB4 /* CGPoint Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				E1EDBBE72216C6B5000A43E8 /* FloatingPoint Extension.swift in Sources */,
 				E1C7780F21FB5F1F004D8F5F /* UIViewXIBExtension.swift in Sources */,
 				E1A2838C2203015600F2801A /* TemperatureView.swift in Sources */,
+				E1FC3C9D2227E81000004EB4 /* CGPoint Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

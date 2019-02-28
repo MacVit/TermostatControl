@@ -19,21 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" distribution="equalCentering" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s3w-cW-oRZ">
-                                <rect key="frame" x="16" y="505" width="343" height="273"/>
+                                <rect key="frame" x="16" y="497.66666666666674" width="343" height="280.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbN-bC-ov2" customClass="WeatherControlView" customModule="TermostatControl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="120" id="im9-Gr-QCD"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EL9-9W-hPf" customClass="PowerSlideView" customModule="TermostatControl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="145" width="343" height="128"/>
+                                        <rect key="frame" x="0.0" y="144.99999999999994" width="343" height="135.33333333333331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="W85-NW-Hm1"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -41,38 +38,38 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCx-zi-sS7" customClass="TemperatureView" customModule="TermostatControl" customModuleProvider="target">
-                                <rect key="frame" x="16" y="270" width="193" height="185"/>
+                                <rect key="frame" x="16" y="242" width="187.66666666666666" height="203"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="193" id="AcL-Bq-GLz"/>
-                                    <constraint firstAttribute="height" constant="185" id="jtF-1e-xhF"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xi-Gi-16G" customClass="ArcView" customModule="TermostatControl" customModuleProvider="target">
-                                <rect key="frame" x="256" y="86" width="539" height="539"/>
+                                <rect key="frame" x="250.66666666666669" y="88" width="544.33333333333326" height="544.66666666666663"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="539" id="EOF-7v-wpw"/>
-                                    <constraint firstAttribute="height" constant="539" id="Ktn-3M-I71"/>
+                                    <constraint firstAttribute="width" secondItem="6xi-Gi-16G" secondAttribute="height" multiplier="1:1" id="Umh-Mr-38c"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1098335609" green="0.105726786" blue="0.1137265638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6xi-Gi-16G" secondAttribute="bottom" constant="153" id="Dx1-on-hSE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6xi-Gi-16G" secondAttribute="bottom" multiplier="1.23" priority="750" id="Dx1-on-hSE"/>
+                            <constraint firstItem="KbN-bC-ov2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="H7N-CV-7zA"/>
+                            <constraint firstItem="EL9-9W-hPf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/6" id="Ib4-Sr-ZMp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s3w-cW-oRZ" secondAttribute="trailing" constant="16" id="JhU-tT-Tzw"/>
-                            <constraint firstItem="s3w-cW-oRZ" firstAttribute="top" secondItem="WCx-zi-sS7" secondAttribute="bottom" constant="50" id="Sgh-SR-z7Q"/>
+                            <constraint firstItem="s3w-cW-oRZ" firstAttribute="top" secondItem="WCx-zi-sS7" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="Sgh-SR-z7Q"/>
                             <constraint firstItem="WCx-zi-sS7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TA1-ys-uTV"/>
-                            <constraint firstItem="6xi-Gi-16G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="aij-5W-Foz"/>
+                            <constraint firstItem="6xi-Gi-16G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="2" priority="750" id="aij-5W-Foz"/>
+                            <constraint firstItem="WCx-zi-sS7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="eaA-9V-SEh"/>
+                            <constraint firstItem="WCx-zi-sS7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/4" id="hlb-97-Fv0"/>
                             <constraint firstItem="s3w-cW-oRZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="p0b-Fw-05b"/>
-                            <constraint firstItem="6xi-Gi-16G" firstAttribute="leading" secondItem="WCx-zi-sS7" secondAttribute="trailing" constant="47" id="rZY-xL-4JJ"/>
+                            <constraint firstItem="6xi-Gi-16G" firstAttribute="leading" secondItem="WCx-zi-sS7" secondAttribute="trailing" priority="750" constant="47" id="rZY-xL-4JJ"/>
                             <constraint firstItem="s3w-cW-oRZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ruG-sP-ogq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="arcWheel" destination="6xi-Gi-16G" id="2Xe-ec-MUQ"/>
                         <outlet property="powerSliderView" destination="EL9-9W-hPf" id="oSG-2Q-H1U"/>
-                        <outlet property="powerSliderViewHeight" destination="W85-NW-Hm1" id="AtB-7j-NCn"/>
+                        <outlet property="temperatureView" destination="WCx-zi-sS7" id="DCz-TP-1PY"/>
                         <outlet property="weatherControlView" destination="KbN-bC-ov2" id="udq-OO-crW"/>
                         <outlet property="weatherControlViewHeight" destination="im9-Gr-QCD" id="TZv-KG-Zfp"/>
                     </connections>

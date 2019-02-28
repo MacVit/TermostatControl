@@ -14,6 +14,12 @@ class TemperatureView: UIView {
     
     @IBOutlet weak var lbTemperature: UILabel!
     
+    var temperature: Int = 0 {
+        didSet {
+            lbTemperature.text = "\(temperature)"
+        }
+    }
+    
     // MARK: - Inits
     
     override init(frame: CGRect) {
